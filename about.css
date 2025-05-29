@@ -1,0 +1,236 @@
+:root {
+  --vermelho: #E31937;
+  --azul: #0055A4;
+  --azul-claro: #E6F0FA;
+  --branco: #FFFFFF;
+  --cinza-texto: #555555;
+  --cinza-claro: #F5F7FA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section {
+  width: 100%;
+  background-color: var(--branco);
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  background-color: var(--branco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .logo i {
+  color: var(--vermelho);
+  font-size: 2rem;
+}
+
+nav .logo h4 {
+  font-family: "Lalezar", cursive;
+  font-size: 2rem;
+  color: var(--azul);
+}
+
+nav .nav-items {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+nav .nav-link {
+  text-decoration: none;
+  color: var(--cinza-texto);
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav .nav-link:hover {
+  color: var(--vermelho);
+}
+
+nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--vermelho);
+  transition: width 0.3s ease;
+}
+
+nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* ABOUT SECTION */
+.section .container {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.container .title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.container .title h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: var(--azul);
+  letter-spacing: 1px;
+}
+
+.container .title h1::after {
+  content: "";
+  height: 4px;
+  width: 100px;
+  background: linear-gradient(to right, var(--vermelho), var(--azul));
+  display: block;
+  border-radius: 25px;
+  margin: 15px auto 0;
+}
+
+.content {
+  float: left;
+  width: 55%;
+}
+
+.image {
+  float: right;
+  width: 40%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 85, 164, 0.1);
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.image:hover img {
+  transform: scale(1.03);
+}
+
+.content .article h3 {
+  color: var(--vermelho);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content .article p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--cinza-texto);
+}
+
+.content .article .button {
+  margin-top: 40px;
+}
+
+.content .article .button a {
+  text-decoration: none;
+  padding: 12px 35px;
+  background: linear-gradient(135deg, var(--vermelho), #C8102E);
+  border-radius: 40px;
+  color: var(--branco);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(227, 25, 55, 0.3);
+}
+
+.content .article .button a:hover {
+  background: linear-gradient(135deg, var(--azul), #003D7A);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 85, 164, 0.3);
+}
+
+.container .social {
+  width: 100%;
+  clear: both;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.container .social i {
+  color: var(--branco);
+  font-size: 1.2rem;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  line-height: 45px;
+  text-align: center;
+  background-color: var(--azul);
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.container .social i:hover {
+  background-color: var(--vermelho);
+  transform: translateY(-5px);
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0 2rem;
+    height: 70px;
+  }
+  
+  .container {
+    width: 90%;
+    padding: 60px 0;
+  }
+  
+  .content, .image {
+    float: none;
+    width: 100%;
+  }
+  
+  .image {
+    margin-top: 40px;
+  }
+  
+  .container .title h1 {
+    font-size: 2rem;
+  }
+  
+  .content .article .button a {
+    padding: 10px 30px;
+  }
+  
+  .container .social i {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
+}
